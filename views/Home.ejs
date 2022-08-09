@@ -1,0 +1,12 @@
+<%- include('partials/header') %> <%- include('navbar') %>
+  <div class="home-container">
+    <h1>Add Contact<i class="fa-solid fa-user-group"></i></h1>
+    <form action="/home" method="post">
+      <input type="text" class="text-btn"  placeholder="First Name*" name="fname" required />
+      <input type="text"  class="text-btn" placeholder="Last Name*" name="lname"  required/>
+      <input type="text"  class="text-btn" placeholder="Phone number*" name="phone" required/>
+      <input type="email" class="text-btn"  placeholder="Email" name="email" />
+      <button class="text-btn">ADD</button>
+    </form>
+  </div>
+<%- include('partials/footer') %>

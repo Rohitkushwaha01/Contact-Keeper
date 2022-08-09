@@ -1,0 +1,29 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    height: 90vh;
+}
+
+.card-items{
+    font-size: 10px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    margin: 20px;
+    width: 324px;
+}
+
+@media screen and (max-width:760px){
+    .card{
+        padding: 0px;
+        margin: 0px;
+        justify-content: center;
+    }
+    .card-items{
+        width: 240px !important;
+        font-size: 10px;
+
+    }
+}

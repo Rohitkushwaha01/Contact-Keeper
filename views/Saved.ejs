@@ -1,0 +1,16 @@
+<%- include('partials/header') %> <%- include('navbar') %>
+<div class="card">
+
+  <% contacts.forEach(function(contact) { %>
+    <form action="/delete" method="post">
+      <div class="card-items">
+        <h1><%=contact.Fname%> <%=contact.Lname%></h1>
+        <h1><%=contact.Phone%></h1>
+        <h1><%=contact.Email%></h1>
+        <button  value="<%= contact.id %>" type="submit" name="deletebtn">Delete</button>
+      </div>
+    </form>
+  <% }); %>
+
+</div>
+
