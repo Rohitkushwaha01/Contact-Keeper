@@ -1,4 +1,4 @@
 # Contact-Keeper📜
-Built using HTML | CSS | NODE.JS | EXPRESS.JS | MONGODB | MONGOOSE | EJS 
+Built using EJS | CSS | Node.js | Express.js | MongoDB | Mongoose
 
 ## URL : - https://murmuring-ridge-05558.herokuapp.com/
