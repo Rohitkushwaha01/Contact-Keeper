@@ -9,7 +9,9 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://new-rohit:rohit@ac-w2zgerz-shard-00-00.gotayl4.mongodb.net:27017,ac-w2zgerz-shard-00-01.gotayl4.mongodb.net:27017,ac-w2zgerz-shard-00-02.gotayl4.mongodb.net:27017/?ssl=true&replicaSet=atlas-tkqc5r-shard-0&authSource=admin&retryWrites=true&w=majority/KeeperDB");
+mongoose.connect(
+  "mongodb+srv://new-rohit:rohit@cluster0.gotayl4.mongodb.net/KeeperDB"
+);
 
 const UsersSchema = new mongoose.Schema({
   email: String,
@@ -97,24 +99,22 @@ app.get("/Saved", (req, res) => {
       Email: contact.email,
       Phone: contact.phoneNumber,
     }));
-    
 
     res.render("Saved", {
-      contacts
+      contacts,
     });
   });
 });
 
-
-app.post('/delete', (req, res)=>{
+app.post("/delete", (req, res) => {
   const deletedItemId = req.body.deletebtn;
-  Contact.findByIdAndDelete({_id:deletedItemId}, function(err){
+  Contact.findByIdAndDelete({ _id: deletedItemId }, function (err) {
     if (!err) {
-        res.redirect("/Saved");
-      } else {
-       console.log(err)
-      }
-    });
+      res.redirect("/Saved");
+    } else {
+      console.log(err);
+    }
+  });
 });
 
 app.listen(process.env.PORT || 2000, () => {
