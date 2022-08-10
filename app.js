@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(
-  "mongodb+srv://new-rohit:rohit@cluster0.gotayl4.mongodb.net/KeeperDB"
+  "mongodb+srv://<username>:<password>@cluster0.gotayl4.mongodb.net/KeeperDB"
 );
 
 const UsersSchema = new mongoose.Schema({
